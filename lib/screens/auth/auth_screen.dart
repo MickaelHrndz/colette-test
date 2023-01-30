@@ -11,6 +11,10 @@ class AuthScreen extends StatelessWidget {
     return BlocListener<AuthBloc, AuthenticationState>(
         listener: (context, state) {
           if (state == AuthenticationState.authenticated) {
+            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+              content: Text("Logged in successfully"),
+              duration: Duration(seconds: 2),
+            ));
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (_) => const ActivitiesScreen()));
           }
