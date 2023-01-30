@@ -1,10 +1,18 @@
+import 'package:colette/screens/activities/registered_activities_bloc.dart';
 import 'package:colette/screens/auth/auth_bloc.dart';
 import 'package:colette/screens/auth/auth_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  runApp(const ColetteApp());
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider<AuthBloc>(
+      create: (BuildContext context) => AuthBloc(),
+    ),
+    BlocProvider<RegisteredActivitiesBloc>(
+      create: (BuildContext context) => RegisteredActivitiesBloc(),
+    ),
+  ], child: const ColetteApp()));
 }
 
 class ColetteApp extends StatelessWidget {
@@ -17,14 +25,7 @@ class ColetteApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MultiBlocProvider(
-        providers: [
-          BlocProvider<AuthBloc>(
-            create: (BuildContext context) => AuthBloc(),
-          ),
-        ],
-        child: const AuthScreen(),
-      ),
+      home: const AuthScreen(),
     );
   }
 }
