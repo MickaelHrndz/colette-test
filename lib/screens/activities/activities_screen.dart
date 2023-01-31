@@ -1,4 +1,4 @@
-import 'package:colette/activities.dart';
+import 'package:colette/screens/activities/activities.dart';
 import 'package:colette/models/activity.dart';
 import 'package:colette/screens/activities/registered_activities_bloc.dart';
 import 'package:colette/screens/activity/activity_screen.dart';

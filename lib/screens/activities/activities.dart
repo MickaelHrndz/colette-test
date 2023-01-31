@@ -1,5 +1,6 @@
 import 'package:colette/models/activity.dart';
 
+/// To be turned into a Repository if we ever replace it with an API
 List<Activity> activities = [
   Activity(
     id: "a",
