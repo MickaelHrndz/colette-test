@@ -22,6 +22,7 @@ void main() {
         {"a"}
       ],
     );
+    
     blocTest<RegisteredActivitiesBloc, Set<String>>(
       'emits a set containing the id when ActivityRegistered is added',
       seed: () => {"a"},

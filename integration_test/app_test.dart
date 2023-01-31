@@ -12,6 +12,7 @@ void main() {
       app.main();
       await tester.pumpAndSettle();
 
+      // Find the login button
       var logInButton = find.text('Log in');
 
       // Verify that the app starts with the auth
@@ -33,12 +34,14 @@ void main() {
       // Verify that the details are shown
       expect(find.text(activities.first.description), findsOneWidget);
 
+      // Find the register button
       var registerButton = find.text("Register");
 
       // Tap the first tile
       await tester.tap(registerButton);
       await tester.pumpAndSettle();
 
+      // Find the unregister button
       var unregisterButton = find.text("Unregister");
 
       // Verify that the button changed
